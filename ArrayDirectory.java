@@ -1,22 +1,18 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class ArrayDirectory implements Directory {
-    static String[] entryDirectory = new String[0];
-
+    static Entry[] entryDirectory = new Entry[0];
     @Override
     public void insertEntry(Entry entry) {
-        for(int i=0; i<=entryDirectory.length; i++){
-            if (entryDirectory[i] != null) {
-                System.out.println("An array is full");
-                boolean ArrayFull = true;
-                break;
-            } else {
-                System.out.println("An array has an empty space");
-                boolean ArrayFull = false;
-            }
+        Entry[] newDirectory = new Entry[entryDirectory.length + 1];
+        int i = 0;
+        for(i=0; i<entryDirectory.length; i++){
+        newDirectory[i] = entryDirectory[i];
         }
-
+        newDirectory[i] = entry;
+        entryDirectory = newDirectory;
     }
 
     @Override
