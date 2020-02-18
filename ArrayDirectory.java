@@ -68,11 +68,21 @@ public class ArrayDirectory implements Directory {
 
     @Override
     public String lookupExtension(String surname) {
-        return null;
+        int i;
+        for(i=0; i<entryDirectory.length; i++){
+            if(entryDirectory[i].Surname.equals(surname)){
+                break;
+            }
+        }
+        return entryDirectory[i].TelephoneExtension;
     }
 
     @Override
     public List<Entry> toArrayList() {
-        return null;
+        ArrayList<Entry> ListDirectory = new ArrayList<Entry>();
+        for(int i=0; i<entryDirectory.length; i++){
+            ListDirectory.add(entryDirectory[i]);
+        }
+        return ListDirectory;
     }
 }
