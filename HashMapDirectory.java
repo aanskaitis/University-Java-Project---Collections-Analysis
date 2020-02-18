@@ -1,9 +1,13 @@
+import java.util.HashMap;
 import java.util.List;
 
 public class HashMapDirectory implements Directory {
+    static HashMap<String, String> extensionNameHashMap = new HashMap<String, String>();
+    static HashMap<String, String> extensionInitialsHashMap = new HashMap<String, String>();
     @Override
     public void insertEntry(Entry entry) {
-
+        extensionNameHashMap.put(entry.TelephoneExtension, entry.Surname);
+        extensionInitialsHashMap.put(entry.TelephoneExtension, entry.Initials);
     }
 
     @Override

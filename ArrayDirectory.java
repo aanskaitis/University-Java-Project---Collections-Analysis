@@ -3,7 +3,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public class ArrayDirectory implements Directory {
-    static Entry[] entryDirectory = new Entry[0];
+    private Entry[] entryDirectory = new Entry[0];
     @Override
     public void insertEntry(Entry entry) {
         Entry[] newDirectory = new Entry[entryDirectory.length + 1];

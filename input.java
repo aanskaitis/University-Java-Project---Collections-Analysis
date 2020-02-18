@@ -19,6 +19,7 @@ public class input {
                 String[] entries = line.split(csvSplitBy);
                 Entry newEntry = new Entry(entries[0], entries[1], entries[2]);
                 directory.insertEntry(newEntry);
+
             }
 
 
