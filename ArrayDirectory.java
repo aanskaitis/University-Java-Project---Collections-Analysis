@@ -35,11 +35,34 @@ public class ArrayDirectory implements Directory {
 
     @Override
     public void deleteEntryUsingExtension(String number) {
+        Entry[] newDirectory = new Entry[entryDirectory.length - 1];
+        int i;
+        for(i=0; i<newDirectory.length; i++){
+            if(!entryDirectory[i].TelephoneExtension.equals(number)){
+                newDirectory[i] = entryDirectory[i];
+            } else {
+                break;
+            }
+        }
+        while(i<newDirectory.length){
+            newDirectory[i] = entryDirectory[i+1];
+            i++;
+        }
+        entryDirectory = newDirectory;
 
     }
 
     @Override
     public void updateExtensionUsingName(String surname, String newNumber) {
+        Entry[] newDirectory = new Entry[entryDirectory.length];
+        int i;
+        for(i=0; i<newDirectory.length; i++){
+            newDirectory[i] = entryDirectory[i];
+            if(newDirectory[i].Surname.equals(surname)){
+                newDirectory[i].TelephoneExtension = newNumber;
+            }
+        }
+        entryDirectory = newDirectory;
 
     }
 
