@@ -6,6 +6,9 @@ public class main {
         ArrayDirectory newDirectory = new ArrayDirectory();
         input.FileRead(file, newDirectory);
         System.out.println(Arrays.toString(ArrayDirectory.entryDirectory));
+        newDirectory.deleteEntryUsingName("Whatsize");
+        System.out.println(Arrays.toString(ArrayDirectory.entryDirectory));
+
 
     }
 }

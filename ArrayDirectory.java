@@ -17,7 +17,20 @@ public class ArrayDirectory implements Directory {
 
     @Override
     public void deleteEntryUsingName(String surname) {
-
+        Entry[] newDirectory = new Entry[entryDirectory.length - 1];
+        int i;
+        for(i=0; i<newDirectory.length; i++){
+            if(!entryDirectory[i].Surname.equals(surname)){
+                newDirectory[i] = entryDirectory[i];
+            } else {
+                break;
+            }
+        }
+        while(i<newDirectory.length){
+            newDirectory[i] = entryDirectory[i+1];
+            i++;
+        }
+        entryDirectory = newDirectory;
     }
 
     @Override
