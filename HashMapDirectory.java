@@ -2,22 +2,23 @@ import java.util.HashMap;
 import java.util.List;
 
 public class HashMapDirectory implements Directory {
-    static HashMap<String, String> extensionNameHashMap = new HashMap<String, String>();
-    static HashMap<String, String> extensionInitialsHashMap = new HashMap<String, String>();
+    static HashMap<String, Entry> extensionEntry = new HashMap<String, Entry>();
+    static HashMap<String, Entry> surnameEntry = new HashMap<String, Entry>();
+
     @Override
     public void insertEntry(Entry entry) {
-        extensionNameHashMap.put(entry.TelephoneExtension, entry.Surname);
-        extensionInitialsHashMap.put(entry.TelephoneExtension, entry.Initials);
+        extensionEntry.put(entry.TelephoneExtension, entry);
+        surnameEntry.put(entry.Surname, entry);
     }
 
     @Override
     public void deleteEntryUsingName(String surname) {
-
+        surnameEntry.remove(surname);
     }
 
     @Override
     public void deleteEntryUsingExtension(String number) {
-
+        extensionEntry.remove(number);
     }
 
     @Override
