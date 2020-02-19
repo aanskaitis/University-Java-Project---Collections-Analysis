@@ -22,6 +22,7 @@ public class main {
         HashMapDirectory extensionInitials = new HashMapDirectory();
         input.FileRead(file, extensionSurname);
         input.FileRead(file, extensionInitials);
+        output.Table(file);
 
 
     }
