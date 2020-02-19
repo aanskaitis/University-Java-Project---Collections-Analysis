@@ -79,10 +79,10 @@ public class ArrayDirectory implements Directory {
 
     @Override
     public List<Entry> toArrayList() {
-        ArrayList<Entry> ListDirectory = new ArrayList<Entry>();
+        ArrayList<Entry> ArrayListDirectory = new ArrayList<Entry>();
         for(int i=0; i<entryDirectory.length; i++){
-            ListDirectory.add(entryDirectory[i]);
+            ArrayListDirectory.add(entryDirectory[i]);
         }
-        return ListDirectory;
+        return ArrayListDirectory;
     }
 }

@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
@@ -14,25 +15,30 @@ public class HashMapDirectory implements Directory {
     @Override
     public void deleteEntryUsingName(String surname) {
         surnameEntry.remove(surname);
+        extensionEntry.remove(surnameEntry.get(surname).TelephoneExtension);
     }
 
     @Override
     public void deleteEntryUsingExtension(String number) {
         extensionEntry.remove(number);
+        surnameEntry.remove(extensionEntry.get(number).Surname);
     }
 
     @Override
     public void updateExtensionUsingName(String surname, String newNumber) {
-
+        surnameEntry.get(surname).TelephoneExtension = newNumber;
+        extensionEntry.remove(surnameEntry.get(surname).TelephoneExtension);
+        Entry newEntry = new Entry(surname, surnameEntry.get(surname).Initials, newNumber);
+        extensionEntry.put(newNumber, newEntry);
     }
 
     @Override
     public String lookupExtension(String surname) {
-        return null;
+        return surnameEntry.get(surname).TelephoneExtension;
     }
 
     @Override
     public List<Entry> toArrayList() {
-        return null;
+        return new ArrayList<>(extensionEntry.values());
     }
 }
