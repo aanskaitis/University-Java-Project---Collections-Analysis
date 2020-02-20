@@ -1,7 +1,4 @@
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 
 public class output {
     public static void Table(String csvFile) {
@@ -38,6 +35,18 @@ public class output {
             }
         }
 
+    }
+
+    public static void TextFile(){
+        try {
+            FileWriter writer = new FileWriter("PerformanceAnalysis.txt", true);
+            writer.write("");
+            writer.write("\r\n");   // write new line
+            writer.write("Good Bye!");
+            writer.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
 }

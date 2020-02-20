@@ -13,7 +13,6 @@ public class Performance {
     public static void ArrayPerformance() {
         input.FileRead(file, ArrayTest);
         Entry testEntry = ArrayTest.toArrayList().get(ArrayTest.toArrayList().size()/2);
-        System.out.println("Average time of inserting an Entry into Array:");
         int combinedTime = 0;
         for (int i = 0; i < 1000; i++) {
             time.start();
@@ -24,9 +23,8 @@ public class Performance {
             ArrayTest.deleteEntryUsingName(testEntry.Surname);
         }
         int averageTime = combinedTime / 1000;
-        System.out.println(averageTime + " nano seconds");
+        String ArrayInsert = averageTime + " nano seconds";
 
-        System.out.println("Average time of deleting an Entry using name from Array:");
         combinedTime = 0;
         for (int i = 0; i < 1000; i++) {
             ArrayTest.insertEntry(testEntry);
@@ -37,8 +35,8 @@ public class Performance {
             time.reset();
         }
         averageTime = combinedTime / 1000;
-        System.out.println(averageTime + " nano seconds");
-        System.out.println("Average time of deleting an Entry using extension from Array:");
+        String ArrayDeleteUsingName = averageTime + " nano seconds";
+
         combinedTime = 0;
         for (int i = 0; i < 1000; i++) {
             time.start();
@@ -49,8 +47,8 @@ public class Performance {
             ArrayTest.deleteEntryUsingExtension(testEntry.TelephoneExtension);
         }
         averageTime = combinedTime / 1000;
-        System.out.println(averageTime + " nano seconds");
-        System.out.println("Average time of looking up an extension of an entry from Array:");
+        String ArrayDelteUsingExtension = averageTime + " nano seconds";
+
         ArrayTest.insertEntry(testEntry);
         combinedTime = 0;
         for (int i = 0; i < 1000; i++) {
@@ -61,13 +59,12 @@ public class Performance {
             time.reset();
         }
         averageTime = combinedTime / 1000;
-        System.out.println(averageTime + " nano seconds");
+        String ArrayLookup = averageTime + " nano seconds";
     }
 
     public static void ArrayListPerformance () {
         input.FileRead(file, ArrayListTest);
         Entry testEntry = ArrayListTest.toArrayList().get(ArrayListTest.toArrayList().size()/2);
-        System.out.println("Average time of inserting an Entry into ArrayList:");
         int combinedTime = 0;
         for (int i = 0; i < 1000; i++) {
             time.start();
@@ -78,7 +75,7 @@ public class Performance {
             ArrayListTest.deleteEntryUsingName(testEntry.Surname);
         }
         int averageTime = combinedTime / 1000;
-        System.out.println(averageTime + " nano seconds");
+        String ArrayListInsert = averageTime + " nano seconds");
         System.out.println("Average time of deleting an Entry using name from ArrayList:");
         combinedTime = 0;
         for (int i = 0; i < 1000; i++) {
@@ -90,7 +87,7 @@ public class Performance {
             time.reset();
         }
         averageTime = combinedTime / 1000;
-        System.out.println(averageTime + " nano seconds");
+        String ArrayListDeleteUsingName = averageTime + " nano seconds";
         System.out.println("Average time of deleting an Entry using extension from ArrayList:");
         combinedTime = 0;
         for (int i = 0; i < 1000; i++) {
@@ -102,7 +99,7 @@ public class Performance {
             ArrayListTest.deleteEntryUsingExtension(testEntry.TelephoneExtension);
         }
         averageTime = combinedTime / 1000;
-        System.out.println(averageTime + " nano seconds");
+        String ArrayListDeleteUsingExtension = averageTime + " nano seconds";
         System.out.println("Average time of looking up an extension of an entry from ArrayList:");
         ArrayListTest.insertEntry(testEntry);
         combinedTime = 0;
@@ -114,7 +111,7 @@ public class Performance {
             time.reset();
         }
         averageTime = combinedTime / 1000;
-        System.out.println(averageTime + " nano seconds");
+        String ArrayListLookup = averageTime + " nano seconds";
     }
 
     public static void HashMapPerformance () {
@@ -132,7 +129,7 @@ public class Performance {
         }
         // The average time for HashMaps are divided by 2, because we used 2 HashMaps.
         int averageTime = (combinedTime / 1000) / 2;
-        System.out.println(averageTime + " nano seconds");
+        String HashMapInsert = averageTime + " nano seconds";
         System.out.println("Average time of deleting an Entry using name from HashMap:");
         combinedTime = 0;
         for (int i = 0; i < 1000; i++) {
@@ -144,7 +141,7 @@ public class Performance {
             time.reset();
         }
         averageTime = (combinedTime / 1000) / 2;
-        System.out.println(averageTime + " nano seconds");
+        String HashMapDeleteUsingName = averageTime + " nano seconds";
         System.out.println("Average time of deleting an Entry using extension from HashMap:");
         combinedTime = 0;
         for (int i = 0; i < 1000; i++) {
@@ -156,7 +153,7 @@ public class Performance {
             HashMapTest.deleteEntryUsingExtension(testEntry.TelephoneExtension);
         }
         averageTime = (combinedTime / 1000) / 2;
-        System.out.println(averageTime + " nano seconds");
+        String HashMapDeleteUsingExtension = averageTime + " nano seconds";
         System.out.println("Average time of looking up an extension of an entry from HashMap:");
         HashMapTest.insertEntry(testEntry);
         combinedTime = 0;
@@ -169,7 +166,7 @@ public class Performance {
         }
         // Only one HashMap is used to lookup extension, therefore the average time is not divided by 2.
         averageTime = combinedTime / 1000;
-        System.out.println(averageTime + " nano seconds");
+        String HashMapLookup = averageTime + " nano seconds";
     }
 }
 
