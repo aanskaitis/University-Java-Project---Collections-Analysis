@@ -14,14 +14,14 @@ public class HashMapDirectory implements Directory {
 
     @Override
     public void deleteEntryUsingName(String surname) {
-        surnameEntry.remove(surname);
         extensionEntry.remove(surnameEntry.get(surname).TelephoneExtension);
+        surnameEntry.remove(surname);
     }
 
     @Override
     public void deleteEntryUsingExtension(String number) {
-        extensionEntry.remove(number);
         surnameEntry.remove(extensionEntry.get(number).Surname);
+        extensionEntry.remove(number);
     }
 
     @Override

@@ -18,11 +18,14 @@ public class main {
 //        System.out.println(Arrays.toString(newListDirectory.toArrayList().toArray()));
 //        System.out.println(newListDirectory.lookupExtension("Sedgemond"));
 //        System.out.println(Arrays.toString(newListDirectory.toArrayList().toArray()));
-        HashMapDirectory extensionSurname = new HashMapDirectory();
-        HashMapDirectory extensionInitials = new HashMapDirectory();
-        input.FileRead(file, extensionSurname);
-        input.FileRead(file, extensionInitials);
-        Performance.ArrayPerformace();
+//        HashMapDirectory extensionSurname = new HashMapDirectory();
+//        HashMapDirectory extensionInitials = new HashMapDirectory();
+//        input.FileRead(file, extensionSurname);
+//        input.FileRead(file, extensionInitials);
+//        Performance.ArrayPerformance();
+//        Performance.ArrayListPerformance();
+//        Performance.HashMapPerformance();
+        UserInterface.UserInputs();
 
 
     }
