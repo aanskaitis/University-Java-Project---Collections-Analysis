@@ -25,7 +25,7 @@ public class main {
 //        Performance.ArrayPerformance();
 //        Performance.ArrayListPerformance();
 //        Performance.HashMapPerformance();
-        UserInterface.UserInputs();
+        UserInput.UserInputs();
 
 
     }
