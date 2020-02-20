@@ -10,7 +10,7 @@ public class ArrayListDirectory implements Directory{
 
     @Override
     public void deleteEntryUsingName(String surname) {
-        int i = 0;
+        int i;
         for(i=0; i<entryListDirectory.size(); i++){
             if(entryListDirectory.get(i).Surname.equals(surname)){
                 break;
@@ -21,7 +21,7 @@ public class ArrayListDirectory implements Directory{
 
     @Override
     public void deleteEntryUsingExtension(String number) {
-        int i = 0;
+        int i;
         for(i=0; i<entryListDirectory.size(); i++){
             if(entryListDirectory.get(i).TelephoneExtension.equals(number)){
                 break;

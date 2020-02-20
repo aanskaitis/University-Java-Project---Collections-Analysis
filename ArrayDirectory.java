@@ -7,7 +7,7 @@ public class ArrayDirectory implements Directory {
     @Override
     public void insertEntry(Entry entry) {
         Entry[] newDirectory = new Entry[entryDirectory.length + 1];
-        int i = 0;
+        int i;
         for(i=0; i<entryDirectory.length; i++){
         newDirectory[i] = entryDirectory[i];
         }
