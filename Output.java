@@ -1,10 +1,12 @@
 import java.awt.*;
 import java.io.*;
 import java.lang.System;
+import java.util.ArrayList;
 import java.util.Arrays;
 
 public class Output {
     public static void Table(String csvFile) {
+        // This method creates a ASCII format table
         BufferedReader br = null;
         String line = "";
         String csvSplitBy = ",";
@@ -40,6 +42,7 @@ public class Output {
     }
 
     public static void TxtFile(String filePathAndName) throws FileNotFoundException {
+        // This method creates a txt file and puts all the performance analysis results
         // If no path was given, a file will be created in the project's directory.
         PrintStream out = new PrintStream(new FileOutputStream(filePathAndName + ".txt"));
         out.println("Average times of Array directory methods:");
@@ -60,5 +63,22 @@ public class Output {
         out.println("Deleting using extension: " + Performance.HashMapDeleteUsingExtension() + " nano seconds ===== Best case");
         out.println("Looking up: " + Performance.HashMapLookup() + " nano seconds ===== Average case");
         out.close();
+    }
+
+    public static void DataToCsv(String filename, Directory directory){
+        // The method creates csv file and puts the chosen data into it
+        try {
+            FileWriter csvWriter = new FileWriter(filename + ".csv");
+            PrintWriter printWriter = new PrintWriter(csvWriter);
+            for(int i=0; i<directory.toArrayList().size(); i++){
+                printWriter.printf(directory.toArrayList().get(i).Surname + "," + directory.toArrayList().get(i).Initials +
+                        "," + directory.toArrayList().get(i).TelephoneExtension + "\n");
+            }
+            printWriter.close();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
     }
 }

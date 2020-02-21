@@ -8,7 +8,7 @@ import java.util.Scanner;
 public class Input {
 
     public static Directory FileRead(String csvFile, Directory directory) {
-
+        // This method takes the csv file, reads it and stores its data into a chosen directory
         BufferedReader br = null;
         String line = "";
         String csvSplitBy = ",";
@@ -42,6 +42,7 @@ public class Input {
     }
 
     public static void UserInputs(){
+        // This method allows user to input commands to achieve different things like access directory or print a table, etc.
         String file = "test_data.csv";
         System.out.println("Type EXIT if you want to exit the program.");
         Scanner UserInput = new Scanner(System.in);
@@ -90,6 +91,7 @@ public class Input {
                 Entry newEntry = new Entry(chosenSurname, chosenInitials, chosenExtension);
                 newDirectory.insertEntry(newEntry);
                 System.out.println(newEntry + " was inserted as a new entry.");
+                UserInputs();
             } else if(chosenDirectory.equals("ARRAYLIST")){
                 Scanner surname = new Scanner(System.in);
                 System.out.println("Enter surname:");
@@ -105,6 +107,7 @@ public class Input {
                 Entry newEntry = new Entry(chosenSurname, chosenInitials, chosenExtension);
                 newDirectory.insertEntry(newEntry);
                 System.out.println(newEntry + " was inserted as a new entry.");
+                UserInputs();
             } else if(chosenDirectory.equals("HASHMAP")){
                 Scanner surname = new Scanner(System.in);
                 System.out.println("Enter surname:");
@@ -120,6 +123,7 @@ public class Input {
                 Entry newEntry = new Entry(chosenSurname, chosenInitials, chosenExtension);
                 newDirectory.insertEntry(newEntry);
                 System.out.println(newEntry + " was inserted as a new entry.");
+                UserInputs();
             } else if (chosenDirectory.equals("EXIT")) {
                 System.exit(0);
             } else {

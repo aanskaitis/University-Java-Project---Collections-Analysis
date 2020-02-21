@@ -8,6 +8,7 @@ public class Performance {
     static StopWatch time = new StopWatch();
 
     public static int ArrayInsert() {
+        // Inserts an entry into array
         Input.FileRead(file, ArrayTest);
         Entry testEntry = ArrayTest.toArrayList().get(ArrayTest.toArrayList().size() / 2);
         int averageTime;
@@ -24,6 +25,7 @@ public class Performance {
         return averageTime;
     }
     public static int ArrayDeleteUsingName() {
+        // Delete an entry from an array using surname
         Input.FileRead(file, ArrayTest);
         Entry testEntry = ArrayTest.toArrayList().get(ArrayTest.toArrayList().size() / 2);
         int averageTime;
@@ -41,6 +43,7 @@ public class Performance {
     }
 
     public static int ArrayDeleteUsingExtension() {
+        // Delete an entry from an array using extension
         Input.FileRead(file, ArrayTest);
         Entry testEntry = ArrayTest.toArrayList().get(ArrayTest.toArrayList().size() / 2);
         int averageTime;
@@ -58,6 +61,7 @@ public class Performance {
     }
 
     public static int ArrayLookup() {
+        // Look up an entry using extension
         Input.FileRead(file, ArrayTest);
         Entry testEntry = ArrayTest.toArrayList().get(ArrayTest.toArrayList().size() / 2);
         int averageTime;
@@ -75,6 +79,7 @@ public class Performance {
     }
 
     public static int ArrayListInsert () {
+        // Inserts an entry into array list
         Input.FileRead(file, ArrayListTest);
         Entry testEntry = ArrayListTest.toArrayList().get(ArrayListTest.toArrayList().size() / 2);
         int averageTime;
@@ -92,6 +97,7 @@ public class Performance {
     }
 
     public static int ArrayListDeleteUsingName() {
+        // Delete an entry from an array list using surname
         Input.FileRead(file, ArrayListTest);
         Entry testEntry = ArrayListTest.toArrayList().get(ArrayListTest.toArrayList().size() / 2);
         int averageTime;
@@ -108,6 +114,7 @@ public class Performance {
         return averageTime;
     }
     public static int ArrayListDeleteUsingExtension() {
+        // Delete an entry from an array list using extension
         Input.FileRead(file, ArrayListTest);
         Entry testEntry = ArrayListTest.toArrayList().get(ArrayListTest.toArrayList().size() / 2);
         int averageTime;
@@ -125,6 +132,7 @@ public class Performance {
     }
 
     public static int ArrayListLookup() {
+        // Look up an entry using extension
         Input.FileRead(file, ArrayListTest);
         Entry testEntry = ArrayListTest.toArrayList().get(ArrayListTest.toArrayList().size() / 2);
         int averageTime;
@@ -141,6 +149,7 @@ public class Performance {
     }
 
     public static int HashMapInsert() {
+        // Inserts an entry into hash map
         Input.FileRead(file, HashMapTest);
         Entry testEntry = HashMapTest.toArrayList().get(HashMapTest.toArrayList().size() / 2);
         int averageTime;
@@ -159,6 +168,7 @@ public class Performance {
     }
 
     public static int HashMapDeleteUsingName() {
+        // Delete an entry from a hash map using surname
         Input.FileRead(file, HashMapTest);
         Entry testEntry = HashMapTest.toArrayList().get(HashMapTest.toArrayList().size() / 2);
         int averageTime;
@@ -176,6 +186,7 @@ public class Performance {
     }
 
     public static int HashMapDeleteUsingExtension() {
+        // Delete an entry from a hash map using extension
         Input.FileRead(file, HashMapTest);
         Entry testEntry = HashMapTest.toArrayList().get(HashMapTest.toArrayList().size() / 2);
         int averageTime;
@@ -193,6 +204,7 @@ public class Performance {
     }
 
     public static int HashMapLookup() {
+        // Look up an entry using extension
         Input.FileRead(file, HashMapTest);
         Entry testEntry = HashMapTest.toArrayList().get(HashMapTest.toArrayList().size() / 2);
         int averageTime;
